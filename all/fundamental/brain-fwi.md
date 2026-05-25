@@ -66,7 +66,7 @@ The computational cost of solving the wave equation in 3D limits solution method
 
 The gradient of the functional w.r.t the model parameters is computed using the adjoint method,
 
-$$\frac{\partial f}{\partial m_i} = \left[\frac {\partial \mathbf{p}} {\partial m_i} \right]^T(\mathbf{p - d}.$$
+$$\frac{\partial f}{\partial m_i} = \left[\frac {\partial \mathbf{p}} {\partial m_i} \right]^T(\mathbf{p - d}).$$
 
 To compute the first derivative of the predicted data w.r.t the model parameters, the wave equation is written as a vector operation on the wavefield:
 
@@ -78,13 +78,13 @@ $$\mathbf{A} \frac {\partial \mathbf{u} } {\partial m_i} +  \frac {\partial \mat
 
 Assuming $\bf A$ is invertible (which it must be if the linear eq. has a unique solution), we can write
 
-$$\frac {\partial \mathbf{u} } {\partial m_i} = -\mathbf{A}^{-1} \frac {\partial \mathbf{A} } {\partial m_i}\mathbf{u} \mathbf{u},$$
+$$\frac {\partial \mathbf{u} } {\partial m_i} = -\mathbf{A}^{-1} \frac {\partial \mathbf{A} } {\partial m_i}\mathbf{u},$$
 
 as the variation of the wavefield w.r.t. the model parameters.
 
 Now, the predicted data are a subset of the full wavefield extracted using a restriction matrix $\bf R$ such that $\bf p = Ru$, leading to
 
-$$\frac {\partial \mathbf{p} } {\partial m_i} = -R\mathbf{A}^{-1} \frac {\partial \mathbf{A} } {\partial m_i}\mathbf{u} \mathbf{u}.$$
+$$\frac {\partial \mathbf{p} } {\partial m_i} = -R\mathbf{A}^{-1} \frac {\partial \mathbf{A} } {\partial m_i}\mathbf{u}.$$
 
 Since $\bf R$ does not depend on the model parameters either, this becomes
 
