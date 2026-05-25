@@ -2,6 +2,7 @@
 
 > [!NOTE] 
 > Title: ODIL to Solve Forward and Inverse Problems for Partial Differential Equations using Machine Learning Tools
+>
 > Author(s): Karnakov et al.
 
 ## Summary
