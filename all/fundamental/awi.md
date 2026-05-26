@@ -145,6 +145,6 @@ d_n & d_{n-1} & d_{n-2}\\
 0 & 0 & d_n\\
 \end{bmatrix},$$
 
-such that $\bf D v = p \ast v \approx d.$i.
+such that $\bf D v = p \ast v \approx d$.
 
 With this representation of $\bf v,$ we need never actually form it. Instead of solving the $\bf v$ equation explicitly (an expenive inverse solve), all quantities can be computed by matrix-vector products using $\bf D$.
