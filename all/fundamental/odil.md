@@ -155,3 +155,15 @@ The core strengths of this approach are:
 - Since $F$ is being discretised directly, there is no hiddne inconsistency between forward solver and gradient computation.
 
 The key challenges are memory consumption, source encoding, and joint initialisation.
+
+## Solving inverse problems
+
+In ODIL, the unknowns are the discrete field(s) _and_ the paramaters $\theta$. They are optimised jointly over one big loss. The loss is a sum  of residual groups, and each is normalised by its number of points, i.e., each residual contributes its mean squared residual, not its summed squared residual. ODIL puts both the PDE residual and the kown data into the loss and obtains the solution and parameters by minimising the total.
+
+For the 1D FWI case, the wavespeed model only enters the loss indirectly through
+
+1. The PDE residual
+2. The boundary terms
+3. Any smoothing regularisation terms
+
+The data term depends only on $u$, so $c$ cannot be driven by the data misfit. In essence, $c$ is only ever updated indirectly. When the data term pulls $u$ away from being PDE consistent for the current $c$, the PDE residual becomes non-zero, and that produces a gradient on $c$.
